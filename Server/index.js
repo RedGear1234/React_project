@@ -9,7 +9,7 @@ app.use(express.json());
 const Jwt = require("jsonwebtoken");
 const jwtKey = "ecomm";
 
-const cors = require('cors');
+const cors = require("cors");
 
 // allow requests from your React app's domain
 const corsOptions = {
@@ -20,45 +20,39 @@ app.use(cors(corsOptions));
 // ---------------------------------------------------------------------------------------------
 
 // LOGIN ----
-app.post(
-  "https://amazing-croissant-e1a7ca.netlify.app/login",
-  async (req, res) => {
-    if (req.body.Password && req.body.Email) {
-      let user = await User.findOne(req.body).select("-Password");
-      if (user) {
-        Jwt.sign({ user }, jwtKey, { expiresIn: "2h" }, (err, token) => {
-          if (err) {
-            res.send({ result: "No User Found!!" });
-          }
-          res.send({ user, auth: token });
-        });
-      } else {
-        res.send({ result: "No User Found!!" });
-      }
+app.post("/api/login", async (req, res) => {
+  if (req.body.Password && req.body.Email) {
+    let user = await User.findOne(req.body).select("-Password");
+    if (user) {
+      Jwt.sign({ user }, jwtKey, { expiresIn: "2h" }, (err, token) => {
+        if (err) {
+          res.send({ result: "No User Found!!" });
+        }
+        res.send({ user, auth: token });
+      });
+    } else {
+      res.send({ result: "No User Found!!" });
     }
   }
-);
+});
 
 // LOGIN API END ----
 
 //  Sign up Api Start  --
 
-app.post(
-  "https://amazing-croissant-e1a7ca.netlify.app/signup",
-  async (req, res) => {
-    let user = new User(req.body);
-    let result = await user.save();
-    result = result.toObject();
-    delete result.Password;
+app.post("/api/signup", async (req, res) => {
+  let user = new User(req.body);
+  let result = await user.save();
+  result = result.toObject();
+  delete result.Password;
 
-    Jwt.sign({ result }, jwtKey, { expiresIn: "2h" }, (err, token) => {
-      if (err) {
-        res.send({ result: "No User Found!!" });
-      }
-      res.send({ result, auth: token });
-    });
-  }
-);
+  Jwt.sign({ result }, jwtKey, { expiresIn: "2h" }, (err, token) => {
+    if (err) {
+      res.send({ result: "No User Found!!" });
+    }
+    res.send({ result, auth: token });
+  });
+});
 
 // Sign up Api End --
 
@@ -109,7 +103,7 @@ app.get("/search/:key", verifyToken, async (req, res) => {
       { category: { $regex: req.params.key } },
     ],
   });
-  res.send(result)
+  res.send(result);
 });
 
 // MIDDLEWARE --------------------------------------------------------------------
