@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Unbounded", cursive;
+  /* background-color: black; */
+}
+
+body {
+  background-color: rgb(17, 16, 16);
+  color: white;
+  margin: 0rem 2rem;
+}
+
+/* NavBar  */
+
+.nav {
+  background-color: rgb(17, 16, 16);
+  margin: 1rem 0rem;
+}
+
+.nav-ul {
+  padding: 1.5rem;
+  list-style: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-li {
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  font-size: 0.9rem;
+  gap: 2rem;
+}
+
+.Links {
+  color: white;
+  text-decoration: none;
+  transition: transform 600ms ease-in-out;
+}
+
+.Links:hover {
+  color: white;
+  background-color: black;
+  padding: 0.5rem;
+  border: 1px solid white;
+  font-weight: bold;
+  font-size: large;
+  box-shadow: 1px 1px 10px rgba(162, 158, 158, 0.898);
+  transform: translateY(-3px);
+}
+
+#Link_logo {
+  color: white;
+  text-decoration: none;
+}
+
+#Link_logo :hover {
+  transition: 500ms ease-in-out;
+  cursor: pointer;
+}
+
+.userName {
+  font-size: x-small;
+  color: white;
+  background: linear-gradient(to right, #d3f42b, #a9ab20);
+  margin: 1rem;
+  padding: 0.3rem;
+  border-radius: 5%;
+}
+
+/* MediaQuery Navbar*/
+
+/* ---------------------------------------------------------------------------------------------------  */
+/* Foooter */
+
+.footer {
+  position: absolute;
+  text-align: center;
+  border: 1px solid white;
+  box-shadow: 1px 1px 10px rgba(162, 158, 158, 0.439);
+  width: 95.5%;
+  margin-top: 2rem;
+}
+/* ---------------------------------------------------------------------------------------------------------- */
+
+/* SignUp */
+
+.container_signUp {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-image: url("./Components/assets/vite.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.SignUp {
+  border: 1px solid wheat;
+  text-align: center;
+  padding: 2rem;
+  margin: 3rem 0rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 1px 1px 10px rgba(162, 158, 158, 0.898);
+  width: 50%;
+  height: 70vh;
+  border-radius: 2%;
+  background: linear-gradient(to left, #1f8a89, #2ef4e7);
+  background-position: left;
+}
+
+.SignUp h1 {
+  text-align: left;
+  font-size: 5rem;
+  position: relative;
+}
+
+input {
+  margin: 1rem 0rem;
+  padding: 0.9rem;
+  width: 100%;
+  border: none;
+  background: none;
+  color: white;
+  transition: transform 600ms ease-in-out;
+  outline: 2px solid white;
+  font-size: smaller;
+  font-weight: light;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:hover {
+  transform: translateX(5px);
+  box-shadow: 1px 0px 10px rgba(105, 102, 102, 0.898);
+}
+
+.sign_up_btn {
+  border: none;
+  padding: 0.5rem 0rem;
+  margin-top: 1rem;
+  background: linear-gradient(to left, #5cfffc, #05d2c5);
+  color: white;
+  box-shadow: 1px 0px 10px rgba(162, 158, 158, 0.898);
+  transition: transform 600ms ease-in-out;
+  border-radius: 5px;
+}
+.sign_up_btn:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+/* --------------------------------------------------------------------------------------------------------  */
+
+/* Sign In  */
+
+.container_signIn {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-image: url("./Components/assets/vite.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*  */
+}
+
+.SignIn {
+  border: 1px solid wheat;
+  text-align: center;
+  padding: 2rem;
+  margin: 3rem 0rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 1px 1px 10px rgba(162, 158, 158, 0.898);
+  width: 50%;
+  height: 70vh;
+  border-radius: 2%;
+  background: linear-gradient(to left, #8fa522, #f1f42e);
+  background-position: left;
+}
+
+.SignIn h1 {
+  text-align: left;
+  font-size: 5rem;
+  position: relative;
+}
+
+.sign_in_btn {
+  border: none;
+  padding: 0.5rem 0rem;
+  margin-top: 1rem;
+  background: linear-gradient(to right, #aecd14, #f1f42e);
+  color: white;
+  box-shadow: 1px 0px 10px rgba(194, 239, 45, 0.898);
+  transition: transform 600ms ease-in-out;
+  border-radius: 5px;
+}
+.sign_in_btn:hover {
+  color: white;
+  transform: translateX(5px);
+}
+/* ------------------------------------------------------------------------------------------------------  */
+/* Add-Products  */
+
+.Product {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 1rem;
+  background: linear-gradient(to right, #772eee, #9489fa);
+  padding: 2rem;
+  margin: 3rem 0rem;
+  border-radius: 2%;
+}
+
+.Product h1 {
+  text-align: left;
+  font-size: 5rem;
+  position: relative;
+}
+.container-product {
+  margin-top: 4rem;
+  background-image: url("./Components/assets/vite.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+
+.product-btn {
+  border: none;
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+  background: linear-gradient(to left, #5cfffc, #05d2c5);
+  color: white;
+  box-shadow: 1px 0px 10px rgba(162, 158, 158, 0.898);
+  transition: transform 600ms ease-in-out;
+  border-radius: 5px;
+}
+
+.prod-name {
+  color: #fff;
+}
+
+.validate {
+  color: yellow;
+  width: fit-content;
+  font-size: 12px;
+  padding: 0.5rem;
+  transition: ease-in-out 500ms transform;
+}
+.validate::before {
+  content: "⚠";
+  color: yellow;
+  margin-right: 0.4rem;
+  font-size: 14px;
+}
+/* ----------------------------------------------------------------------------------------------  */
+
+/* Prodcuts  */
+
+/* .conatiner-ProductsList {
+ border: 1px solid red;
+} */
+
+.product-List {
+  width: fit-content;
+  margin: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-List li {
+  list-style: none;
+  margin: 1rem;
+}
+
+.ul-products {
+  margin: 1.2rem;
+  height: fit-content;
+  border-radius: 10px;
+  padding-bottom: 1rem;
+  border: 1px solid white;
+}
+
+.li-products {
+  padding: 0.2rem;
+  width: fit-content;
+  padding-left: 1.1rem;
+}
+
+.banner {
+  height: 40vh;
+  padding: 1rem;
+  border-radius: 10px;
+  background-image: url("./Components/assets/duy-pham-Cecb0_8Hx-o-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 2.3rem;
+  background-position: left;
+  backdrop-filter: opacity(30px);
+}
+
+.banner h1 {
+  font-size: 5rem;
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.ul-Image-div {
+  margin: 1rem;
+  height: fit-content;
+  text-align: center;
+  padding: 1rem;
+}
+
+.ul-Image-div img {
+  height: 400px;
+  margin: 0.5rem;
+}
+
+.delete {
+  float: right;
+  border: none;
+  border-radius: 10%;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(42, 42, 42);
+}
+
+.delete:hover {
+  float: right;
+  border: none;
+  border-radius: 10%;
+  text-align: center;
+  background: linear-gradient(to right, #874100, #d25a05);
+  width: 35px;
+  height: 35px;
+}
+
+.update{
+   float: right;
+  border: none;
+  border-radius: 10%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(42, 42, 42);
+  color: white;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.update:hover{
+  background-color: #1f8a89;
+}
+
+/* ----------------------------------------------------------------------------------------------  */
+
+/* search_bar  */
+
+.search_bar{
+  width: 96.5%;
+  background: linear-gradient(to right, #772eee, #9489fa);
+  border-top: none;
+  outline: none;
+}
