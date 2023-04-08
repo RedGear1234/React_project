@@ -13,7 +13,8 @@ const cors = require('cors');
 
 // allow requests from your React app's domain
 const corsOptions = {
-  origin: "https://golden-frangollo-7f8e62.netlify.app/",
+  origin:
+    "https://6431c779a308c16bacb30c8a--amazing-croissant-e1a7ca.netlify.app/signup",
 };
 app.use(cors(corsOptions));
 

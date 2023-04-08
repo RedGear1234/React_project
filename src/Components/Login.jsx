@@ -15,7 +15,7 @@ const Login = () => {
 
   const handlelogin = async () => {
     let result = await fetch(
-      `https://golden-frangollo-7f8e62.netlify.app/login`,
+      `https://6431c779a308c16bacb30c8a--amazing-croissant-e1a7ca.netlify.app/signup`,
       {
         method: "post",
         body: JSON.stringify({ Email, Password }),
