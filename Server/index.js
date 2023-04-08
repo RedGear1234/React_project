@@ -20,39 +20,45 @@ app.use(cors(corsOptions));
 // ---------------------------------------------------------------------------------------------
 
 // LOGIN ----
-app.post("/login", async (req, res) => {
-  if (req.body.Password && req.body.Email) {
-    let user = await User.findOne(req.body).select("-Password");
-    if (user) {
-      Jwt.sign({ user }, jwtKey, { expiresIn: "2h" }, (err, token) => {
-        if (err) {
-          res.send({ result: "No User Found!!" });
-        }
-        res.send({ user, auth: token });
-      });
-    } else {
-      res.send({ result: "No User Found!!" });
+app.post(
+  "https://amazing-croissant-e1a7ca.netlify.app/login",
+  async (req, res) => {
+    if (req.body.Password && req.body.Email) {
+      let user = await User.findOne(req.body).select("-Password");
+      if (user) {
+        Jwt.sign({ user }, jwtKey, { expiresIn: "2h" }, (err, token) => {
+          if (err) {
+            res.send({ result: "No User Found!!" });
+          }
+          res.send({ user, auth: token });
+        });
+      } else {
+        res.send({ result: "No User Found!!" });
+      }
     }
   }
-});
+);
 
 // LOGIN API END ----
 
 //  Sign up Api Start  --
 
-app.post("/signup",  async (req, res) => {
-  let user = new User(req.body);
-  let result = await user.save();
-  result = result.toObject();
-  delete result.Password;
+app.post(
+  "https://amazing-croissant-e1a7ca.netlify.app/signup",
+  async (req, res) => {
+    let user = new User(req.body);
+    let result = await user.save();
+    result = result.toObject();
+    delete result.Password;
 
-  Jwt.sign({ result }, jwtKey, { expiresIn: "2h" }, (err, token) => {
-    if (err) {
-      res.send({ result: "No User Found!!" });
-    }
-    res.send({ result, auth: token });
-  });
-});
+    Jwt.sign({ result }, jwtKey, { expiresIn: "2h" }, (err, token) => {
+      if (err) {
+        res.send({ result: "No User Found!!" });
+      }
+      res.send({ result, auth: token });
+    });
+  }
+);
 
 // Sign up Api End --
 
