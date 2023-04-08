@@ -10,13 +10,13 @@ const SignUp = () => {
 
   const collectData = async () => {
     let result = await fetch(
-      `https://amazing-croissant-e1a7ca.netlify.app/signup`,
+      `/api/signup`,
       {
         method: "POST",
-        body: JSON.stringify({ Name, Email, Password }),
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({ Name, Email, Password }),
       }
     );
     result = await result.json();
